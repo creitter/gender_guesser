@@ -1,0 +1,21 @@
+%h1 Hi let's see how smart I am.
+
+= form_tag method: :post do
+  .height
+    = label_tag :height, "What is your height?"
+    = text_field_tag 'height'
+    %span.note 
+      In feet and inches, like 5.8
+  
+  .weight
+    = label_tag :weight, "How much do you weigh?"
+    = text_field_tag :weight
+    %span.note 
+      In pounds and I promise I won't tell anyone.
+    
+  = submit_tag "My turn to guess!"
+
+
+  - if @result.present?
+    .result
+      My guess is your are a #{@result}
