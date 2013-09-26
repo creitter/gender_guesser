@@ -1,27 +1,7 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Coding Challenge: 
+Please write an app in Rails that takes in a person's height and weight and then guesses that person's gender. You will probably want to create a way to base the prediction on some sample data (don't worry too much about making the app statistically accurate.) Please also write some tests for your app.
 
 
 Please feel free to use a different markup language if you do not plan to run
