@@ -10,7 +10,15 @@ class GuessController < ApplicationController
     weight = params[:weight].to_i  
     
     @result = make_a_guess(height, weight)
-    render :index
+
+    respond_to do |format|
+      format.js { 
+        render :template => 'guess/update.js.erb'
+      }
+      format.html {
+        render :index
+      } 
+    end    
   end
   
 end

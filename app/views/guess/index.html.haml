@@ -1,6 +1,6 @@
 %h1 Hi let's see how smart I am.
 
-= form_tag method: :post do
+= form_tag({method: :post}, remote: true) do
   .height
     = label_tag :height, "What is your height?"
     = text_field_tag 'height'
@@ -15,7 +15,4 @@
     
   = submit_tag "My turn to guess!"
 
-
-  - if @result.present?
-    .result
-      My guess is your are a #{@result}
+  #result
