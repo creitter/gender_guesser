@@ -4,8 +4,6 @@
   .height
     = label_tag :height, "What is your height?"
     = text_field_tag 'height'
-    %span.note 
-      In feet and inches, like 5.8
   
   .weight
     = label_tag :weight, "How much do you weigh?"
@@ -13,6 +11,7 @@
     %span.note 
       In pounds and I promise I won't tell anyone.
     
-  = submit_tag "My turn to guess!"
+  .submit
+    = submit_tag "My turn to guess!"
 
   #result

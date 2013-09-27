@@ -1,3 +1,20 @@
 // Place all the styles related to the Guesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.note {
+  color: grey;
+  font-size: 10px;
+}
+
+.height, .weight {
+  margin: 5px 0 0 5px;
+}
+
+.submit {
+  margin-top: 20px;
+}
+
+#result {
+  color: green;
+}
