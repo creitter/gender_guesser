@@ -17,4 +17,25 @@
 
 #result {
   color: green;
+  font-weight: bold;
+  margin-top: 25px;
 }
+
+.female {
+  background: url('female.jpg');
+  width: 89px;
+  height: 89px;
+}
+
+.male {
+  background: url('male.jpg');
+  width: 89px;
+  height: 89px;
+}
+
+.dont-know {
+  background: url('dont-know.jpg');
+  width: 220px;
+  height: 189px;
+}
+

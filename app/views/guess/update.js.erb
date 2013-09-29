@@ -1,1 +1,8 @@
-$('#result').html("<p>Are you a <%= @result %>?</p>");
+$('#result').html("Are you ");
+<% if @result == :female then %>
+  $('#result').append('<div class="female"></div>');
+<% elsif @result == :male then %>
+  $('#result').append('<div class="male"></div>');
+<% else %>
+  $('#result').append('<div class="dont-know"></div><p>This means I\'m not sure!</p>');
+<% end %>
