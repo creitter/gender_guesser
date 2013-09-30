@@ -1,8 +1,23 @@
-$('#result').html("Are you ");
-<% if @result == :female then %>
-  $('#result').append('<div class="female"></div>');
-<% elsif @result == :male then %>
-  $('#result').append('<div class="male"></div>');
+$('#error').remove();
+$('.error').remove();
+$('label').css('color','');
+
+
+<% if @guess.errors.present? %>
+
+  $('h1').after('<div id="error">We have some errors</div>');
+  <% @guess.errors.messages.each{|error| %> 
+    $('.<%= error.first%> label' ).css('color', 'red');
+    $('#error').after('<li class="error"> The value for <%=error.first%> <%= error.last.join(" and ") %></li>'); 
+  <% } %>
+
 <% else %>
-  $('#result').append('<div class="dont-know"></div><p>This means I\'m not sure!</p>');
+  $('#result').html('Are you ');
+  <% if @result == :female then %>
+    $('#result').append('<div class="female"></div>');
+  <% elsif @result == :male then %>
+    $('#result').append('<div class="male"></div>');
+  <% else %>
+    $('#result').append('<div class="dont-know"></div><p>This means I\'m not sure!</p>');
+  <% end %>
 <% end %>

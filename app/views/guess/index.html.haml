@@ -1,17 +1,17 @@
 %h1 Hi let's see how smart I am.
 
-= form_tag({method: :post}, remote: true) do
+= form_for :guess, remote: true do |f|
   .height
-    = label_tag :height, "What is your height?"
-    = text_field_tag 'height'
+    = f.label :height, "What is your height?"
+    = f.text_field 'height', placeholder: 'In feet or inches'
   
   .weight
-    = label_tag :weight, "How much do you weigh?"
-    = text_field_tag :weight
+    = f.label :weight, "How much do you weigh?"
+    = f.text_field :weight, placeholder: 'In pounds'
     %span.note 
-      In pounds and I promise I won't tell anyone.
+      and I promise I won't tell anyone.
     
   .submit
-    = submit_tag "My turn to guess!"
+    = f.submit "My turn to guess!"
 
   #result

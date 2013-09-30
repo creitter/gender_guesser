@@ -1,16 +1,18 @@
 class GuessController < ApplicationController
   include GuessHelper
   
-  before_filter :normalize_params, only: :make_guess
-  
   def index 
     @guess = Guess.new
   end
   
   def make_guess
+    @guess = Guess.new(params[:guess])
     
-    @result = make_a_guess(@height, @weight)
-
+    if @guess.valid?
+      @guess.normalize_guess
+      @result = make_a_guess(@guess)  
+    end
+    
     respond_to do |format|
       format.js { 
         render :template => 'guess/update.js.erb'
@@ -18,16 +20,6 @@ class GuessController < ApplicationController
       format.html {
         render :index
       } 
-    end    
-  end
-  
-  def normalize_params
-    @height = params[:height].to_f
-    @weight = params[:weight].to_f
-    
-    # determine the height values used.
-    if @height < 40 # I would presume it's safe to say a value of < 40  is probably in feet and inches
-      @height = (@height.to_i * 12) + (@height % 1)
     end
   end
   
