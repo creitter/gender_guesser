@@ -5,7 +5,7 @@ $('label').css('color','');
 
 <% if @guess.errors.present? %>
 
-  $('h1').after('<div id="error">We have some errors</div>');
+  $('.note.ref').after('<div id="error">We have some errors</div>');
   <% @guess.errors.messages.each{|error| %> 
     $('.<%= error.first%> label' ).css('color', 'red');
     $('#error').after('<li class="error"> The value for <%=error.first%> <%= error.last.join(" and ") %></li>'); 

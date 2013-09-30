@@ -22,19 +22,19 @@
 }
 
 .female {
-  background: url('female.jpg');
+  background: url(image_path('female.jpg'));
   width: 89px;
   height: 89px;
 }
 
 .male {
-  background: url('male.jpg');
+  background: url(image_path('male.jpg'));
   width: 89px;
   height: 89px;
 }
 
 .dont-know {
-  background: url('dont-know.jpg');
+  background: url(image_path('dont-know.jpg'));
   width: 220px;
   height: 189px;
 }
