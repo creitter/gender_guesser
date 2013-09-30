@@ -18,6 +18,7 @@ $('label').css('color','');
   <% elsif @result == :male then %>
     $('#result').append('<div class="male"></div>');
   <% else %>
+    $('#result').html('');
     $('#result').append('<div class="dont-know"></div><p>This means I\'m not sure!</p>');
   <% end %>
 <% end %>
